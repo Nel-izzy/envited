@@ -15,18 +15,26 @@ const EventPage = () => {
       <h2>Your Event Details</h2>
       <section className="row">
         <div className="col-sm-6">
-          <h4>
+          <h4 className="event-name">
             {eventName} <br />
           </h4>
-          <small>Hosted by {hostName}</small>
+          <small className="host-name">Hosted by {hostName}</small>
 
           <p>
             <FaRegCalendarAlt />
-            <Moment>{startTime}</Moment> to <Moment>{endTime}</Moment>
+            <span className="start-time">
+              <Moment>{startTime}</Moment>{" "}
+            </span>
+            to{" "}
+            <span className="end-time">
+              <Moment>{endTime}</Moment>
+            </span>
           </p>
 
           <p>
-            <GoLocation /> Street name <br />
+            <GoLocation />
+            <span className="location"> Street name </span>
+            <br />
             {eventLocation}
           </p>
         </div>
