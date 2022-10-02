@@ -105,6 +105,7 @@ input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="date"],
+input[type="submit"],
 select,
 textarea {
   display: block;
@@ -195,4 +196,17 @@ h3 {
   flex: none;
   order: 1;
   flex-grow: 0;
+}
+.time-wrapper {
+  display: flex;
+  justify-content: left;
+}
+.time-wrapper > p {
+  margin-left: 10px;
+}
+.event-details-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

@@ -5,15 +5,15 @@ const LandingPage = () => {
   const navigate = useNavigate();
   return (
     <section className="row">
-      <p className="col-sm-6">
+      <div className="col-sm-6">
         <img
           src="images/LandingPage.png"
           alt="Landing Page"
           className="img-fluid"
         />
-      </p>
+      </div>
 
-      <p className="col-sm-6">
+      <div className="col-sm-6">
         <p className="right-content">
           <span className="imagine">Imagine if</span>
           <span className="snapchat">Snapchat</span>
@@ -33,7 +33,7 @@ const LandingPage = () => {
             <span className="event-text">Create my event</span>
           </button>
         </p>
-      </p>
+      </div>
     </section>
   );
 };

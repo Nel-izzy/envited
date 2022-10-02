@@ -10,21 +10,25 @@ const EventForm = () => {
     startTime: "",
     endTime: "",
     eventLocation: "",
-    eventPhoto: "",
   };
 
   const [event, setEvent] = useState(eventDetails);
+  const [eventPhoto, setEventPhoto] = useState(null);
 
-  const { eventName, hostName, startTime, endTime, eventLocation, eventPhoto } =
-    event;
+  const { eventName, hostName, startTime, endTime, eventLocation } = event;
 
   const onChange = (e) =>
     setEvent({ ...event, [e.target.name]: e.target.value });
 
+  const onChangePhoto = (e) => {
+    setEventPhoto([...e.target.files]);
+    console.log(e.target.files[0]);
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
 
-    navigate("/event-details", { state: event });
+    navigate("/event-details", { state: { ...event, ...eventPhoto } });
   };
 
   return (
@@ -77,13 +81,7 @@ const EventForm = () => {
         />
       </p>
       <p>
-        <input
-          type="file"
-          placeholder="Event Photo"
-          name="eventPhoto"
-          value={eventPhoto}
-          onChange={onChange}
-        />
+        <input type="file" placeholder="Event Photo" onChange={onChangePhoto} />
       </p>
       <p>
         <input
