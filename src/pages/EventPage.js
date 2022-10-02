@@ -1,7 +1,8 @@
 import React, { Fragment } from "react";
 import Moment from "react-moment";
 import "moment-timezone";
-import moment from "moment/min/moment-with-locales";
+import { FaRegCalendarAlt } from "react-icons/fa";
+import { GoLocation } from "react-icons/go";
 import { useLocation } from "react-router-dom";
 
 const EventPage = () => {
@@ -20,11 +21,12 @@ const EventPage = () => {
           <small>Hosted by {hostName}</small>
 
           <p>
+            <FaRegCalendarAlt />
             <Moment>{startTime}</Moment> to <Moment>{endTime}</Moment>
           </p>
 
           <p>
-            Street name <br />
+            <GoLocation /> Street name <br />
             {eventLocation}
           </p>
         </div>
